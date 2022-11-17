@@ -11,27 +11,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Dados;
-import com.example.demo.repository.DadosRepository;
+import com.example.demo.model.Documento;
+import com.example.demo.repository.DocumentoRepository;
 
 @RestController
-@RequestMapping("/dados")
-public class DadosController {
-	
+@RequestMapping("/documento")
+public class DocumentoController {
+
 	@Autowired
-	private DadosRepository dadosRepository;
+	private DocumentoRepository documentoRepository;
 	
 	@GetMapping
-	public List<Dados> listarDados() {
-		return dadosRepository.findAll();
+	public List<Documento> listarDocumento() {
+		return documentoRepository.findAll();
 	}
 	
 	@PostMapping(path = "/post")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Dados addDados(@RequestBody Dados dados) {
-		return dadosRepository.save(dados);
+	public Documento addDocumento(@RequestBody Documento documento) {
+		return documentoRepository.save(documento);
 	}
-	
 }
-
-

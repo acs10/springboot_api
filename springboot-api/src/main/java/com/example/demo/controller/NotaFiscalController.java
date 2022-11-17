@@ -11,27 +11,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Dados;
-import com.example.demo.repository.DadosRepository;
+import com.example.demo.model.NotaFiscal;
+import com.example.demo.repository.NotaFiscalRepository;
 
 @RestController
-@RequestMapping("/dados")
-public class DadosController {
-	
+@RequestMapping("/notafiscal")
+public class NotaFiscalController {
+
 	@Autowired
-	private DadosRepository dadosRepository;
+	private NotaFiscalRepository notaFiscalRepository;
 	
 	@GetMapping
-	public List<Dados> listarDados() {
-		return dadosRepository.findAll();
+	public List<NotaFiscal> listarNotaFiscal() {
+		return notaFiscalRepository.findAll();
 	}
 	
 	@PostMapping(path = "/post")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Dados addDados(@RequestBody Dados dados) {
-		return dadosRepository.save(dados);
+	public NotaFiscal addNotaFiscal(@RequestBody NotaFiscal notaFiscal) {
+		return notaFiscalRepository.save(notaFiscal);
 	}
-	
 }
-
-
