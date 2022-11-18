@@ -11,17 +11,16 @@ public class ProdutoTest {
 	@Test
 	void contextLoads() {
 		Produto produto = new Produto();
-		produto.setCodProdt("");
-		produto.setIdentdLinhaBilat("");
-		produto.setTpDeb_Cred("");
-		produto.setISPBIFCredtd("");
-		produto.setISPBIFDebtd("");
-		produto.setVlrLanc("");
-		produto.setCNPJNLiqdantDebtd("");
-		produto.setNomCliDebtd("");
-		produto.setCNPJNLiqdantCredtd("");
-		produto.setNomCliCredtd("");
-		produto.setTpTranscSLC("");
+		produto.setCodProdt("MCC");
+		produto.setIdentdLinhaBilat("12345678MCC1633000");
+		produto.setTpDeb_Cred("C");
+		produto.setISPBIFCredtd("99999999");
+		produto.setISPBIFDebtd("99999999");
+		produto.setVlrLanc("5462.12");
+		produto.setCNPJNLiqdantDebtd("93052785000127");
+		produto.setNomCliDebtd("TRIANGULOBOB");
+		produto.setCNPJNLiqdantCredtd("07284171000139");
+		produto.setNomCliCredtd("BANCO");
+		produto.setTpTranscSLC("02");
 	}
-	
 }

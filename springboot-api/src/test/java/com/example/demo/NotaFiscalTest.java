@@ -11,12 +11,11 @@ public class NotaFiscalTest {
 	@Test
 	void contextLoads() {
 		NotaFiscal notaFiscal = new NotaFiscal();
-		notaFiscal.setIdentdEmissor("");
-		notaFiscal.setIdentdDestinatario("");
-		notaFiscal.setNumSeq("");
-		notaFiscal.setIndrCont("");
-		notaFiscal.setDomSist("");
-		notaFiscal.setNUOp("");
+		notaFiscal.setIdentdEmissor("99999999");
+		notaFiscal.setIdentdDestinatario("12345678");
+		notaFiscal.setNumSeq("1");
+		notaFiscal.setIndrCont("N");
+		notaFiscal.setDomSist("SPB01");
+		notaFiscal.setNUOp("12345678912345678912345");
 	}
-	
 }
