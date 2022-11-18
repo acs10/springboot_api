@@ -12,7 +12,7 @@ public class SpringbootApiApplication {
 
 	public static void main(String[] args) throws JSONException, IOException {
 
-		String path = "C:\\Users\\jmn\\Documents\\xmls\\modelo.xml";
+		String path = "C:\\Users\\acs10\\Documents\\springboot_api\\SLC0001-modelo.xml";
 		String stringXml = ManipuladorArquivo.leitor(path);
 		ParserJSON parser = new ParserJSON();
 		String json = parser.ProdutoToJson(stringXml);
