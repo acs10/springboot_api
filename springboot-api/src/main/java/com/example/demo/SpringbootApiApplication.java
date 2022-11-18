@@ -2,30 +2,21 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import com.example.demo.view.MyHandler;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import com.example.demo.view.ManipuladorArquivo;
+import com.example.demo.view.ParserJSON;
 import java.io.IOException;
+import org.json.*;
 
 @SpringBootApplication
 public class SpringbootApiApplication {
 
-	public static void main(String[] args) {
-		try {
+	public static void main(String[] args) throws JSONException, IOException {
 
-            SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
-            InputSource input = new InputSource("C:/Users/jmn/Documents/xmls/modelo.xml");
-            MyHandler myHandler = new MyHandler();
-            parser.parse(input, myHandler);
-            System.out.println(myHandler.getValorTotal());
-            System.out.println(myHandler.getValorTotal().length());
-
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
-        }
+		String path = "C:\\Users\\jmn\\Documents\\xmls\\modelo.xml";
+		String stringXml = ManipuladorArquivo.leitor(path);
+		ParserJSON parser = new ParserJSON();
+		String json = parser.ProdutoToJson(stringXml);
+		System.out.println(json);
 		SpringApplication.run(SpringbootApiApplication.class, args);
 	}
 

@@ -35,6 +35,6 @@ public class NotaFiscal {
     @Column(length = 20)
     public String NUOp;
 
-
-
 }
+
+
