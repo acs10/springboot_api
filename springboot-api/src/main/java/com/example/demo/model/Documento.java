@@ -23,9 +23,6 @@ public class Documento {
     public String NumCtrlSLC;
 
     @Column(length = 20)
-    public String IdentdEmissor;
-
-    @Column(length = 20)
     public String ISPBIF;
 
     @Column(length = 20)
@@ -36,5 +33,11 @@ public class Documento {
 
     @Column(length = 20)
     public String NumSeqCicloLiquid;
+
+    @Column(length = 20)
+    public String DtHrSLC;
+
+    @Column(length = 20)
+    public String DtMovto;
 
 }
